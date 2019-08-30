@@ -1,0 +1,33 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+publish {
+  userOrg = 'huyuanhao'//jcenter账户的用户名
+//    repoName = 'maven' //仓库名,不指明,默认传到maven
+  groupId = 'com.yh.yhSpinner'//jcenter上的路径名,一般使用项目包名
+  artifactId = 'jinutil'//项目名称
+  publishVersion = '1.2.0'//版本号
+  desc = 'a library from jin '//描述,中文会乱码,应该使用英文
+  website = 'https://github.com/RomanticHua/TestDemo'//这里得填写此项目的github地址,否则不能同步到jcenter
+}
+
+tasks.withType(Javadoc) {//防止编码问题
+  options.addStringOption('Xdoclint:none', '-quiet')
+  options.addStringOption('encoding', 'UTF-8')
+  options.addStringOption('charSet', 'UTF-8')
+}
+
+android {
+  compileSdkVersion 28
+  buildToolsVersion '28.0.3'
+  resourcePrefix 'ms__'
+
+  defaultConfig {
+    minSdkVersion 14
+    targetSdkVersion 28
+  }
+}
+
+dependencies {
+  implementation 'androidx.annotation:annotation:1.0.0'
+  testImplementation 'junit:junit:4.12'
+}
