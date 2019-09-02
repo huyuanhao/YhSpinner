@@ -18,28 +18,28 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
   <declare-styleable name="YhSpinner" tools:ignore="ResourceName">
-    <attr format="color" name="ms_arrow_tint"/>
-    <attr format="boolean" name="ms_hide_arrow"/>
-    <attr format="color" name="ms_background_color"/>
-    <attr format="color" name="ms_text_color"/>
-    <attr format="dimension" name="ms_dropdown_max_height"/>
-    <attr format="dimension" name="ms_dropdown_height">
+    <attr format="color" name="yh_arrow_tint"/>
+    <attr format="boolean" name="yh_hide_arrow"/>
+    <attr format="color" name="yh_background_color"/>
+    <attr format="color" name="yh_text_color"/>
+    <attr format="dimension" name="yh_dropdown_max_height"/>
+    <attr format="dimension" name="yh_dropdown_height">
       <enum name="fill_parent" value="-1"/>
       <enum name="match_parent" value="-1"/>
       <enum name="wrap_content" value="-2"/>
     </attr>
-    <attr format="integer" name="ms_background_selector"/>
-    <attr format="integer" name="ms_background_parent_selector"/>
-    <attr format="dimension" name="ms_padding_top"/>
-    <attr format="dimension" name="ms_padding_left"/>
-    <attr format="dimension" name="ms_padding_bottom"/>
-    <attr format="dimension" name="ms_padding_right"/>
-    <attr format="dimension" name="ms_popup_padding_top"/>
-    <attr format="dimension" name="ms_popup_padding_left"/>
-    <attr format="dimension" name="ms_popup_padding_bottom"/>
-    <attr format="dimension" name="ms_popup_padding_right"/>
-    <attr format="string" name="ms_hint"/>
-    <attr format="color" name="ms_hint_color"/>
-    <attr format="reference" name="ms_entries"/>
+    <attr format="integer" name="yh_background_selector"/>
+    <attr format="integer" name="yh_background_parent_selector"/>
+    <attr format="dimension" name="yh_padding_top"/>
+    <attr format="dimension" name="yh_padding_left"/>
+    <attr format="dimension" name="yh_padding_bottom"/>
+    <attr format="dimension" name="yh_padding_right"/>
+    <attr format="dimension" name="yh_popup_padding_top"/>
+    <attr format="dimension" name="yh_popup_padding_left"/>
+    <attr format="dimension" name="yh_popup_padding_bottom"/>
+    <attr format="dimension" name="yh_popup_padding_right"/>
+    <attr format="string" name="yh_hint"/>
+    <attr format="color" name="yh_hint_color"/>
+    <attr format="reference" name="yh_entries"/>
   </declare-styleable>
 </resources>

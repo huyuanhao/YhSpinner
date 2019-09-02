@@ -15,7 +15,7 @@
  *
  */
 
-package com.fan.yhspinner;
+package com.yh.spinner;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -25,8 +25,7 @@ import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.huyuanhao.yhSpinner.R;
-import com.huyuanhao.yhSpinner.YhSpinner;
+import com.yh.yhSpinner.YhSpinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

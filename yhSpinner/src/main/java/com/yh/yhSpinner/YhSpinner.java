@@ -15,7 +15,7 @@
  *
  */
 
-package com.huyuanhao.yhSpinner;
+package com.yh.yhSpinner;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -119,31 +119,31 @@ public class YhSpinner extends TextView {
     defaultPopupPaddingTop = defaultPopupPaddingBottom = resources.getDimensionPixelSize(R.dimen.ms__popup_padding_top);
 
     try {
-      entries = ta.getResourceId(R.styleable.YhSpinner_ms_entries,0);
-      backgroundColor = ta.getColor(R.styleable.YhSpinner_ms_background_color, Color.WHITE);
-      backgroundSelector = ta.getResourceId(R.styleable.YhSpinner_ms_background_selector, 0);
-      backgroundParentSelector  = ta.getResourceId(R.styleable.YhSpinner_ms_background_parent_selector, 0);
-      textColor = ta.getColor(R.styleable.YhSpinner_ms_text_color, defaultColor);
-      hintColor = ta.getColor(R.styleable.YhSpinner_ms_hint_color, defaultColor);
-      arrowColor = ta.getColor(R.styleable.YhSpinner_ms_arrow_tint, textColor);
-      hideArrow = ta.getBoolean(R.styleable.YhSpinner_ms_hide_arrow, false);
-      hintText = ta.getString(R.styleable.YhSpinner_ms_hint) == null ? ""
-          : ta.getString(R.styleable.YhSpinner_ms_hint);
-      popupWindowMaxHeight = ta.getDimensionPixelSize(R.styleable.YhSpinner_ms_dropdown_max_height, 0);
-      popupWindowHeight = ta.getLayoutDimension(R.styleable.YhSpinner_ms_dropdown_height,
+      entries = ta.getResourceId(R.styleable.YhSpinner_yh_entries,0);
+      backgroundColor = ta.getColor(R.styleable.YhSpinner_yh_background_color, Color.WHITE);
+      backgroundSelector = ta.getResourceId(R.styleable.YhSpinner_yh_background_selector, 0);
+      backgroundParentSelector  = ta.getResourceId(R.styleable.YhSpinner_yh_background_parent_selector, 0);
+      textColor = ta.getColor(R.styleable.YhSpinner_yh_text_color, defaultColor);
+      hintColor = ta.getColor(R.styleable.YhSpinner_yh_hint_color, defaultColor);
+      arrowColor = ta.getColor(R.styleable.YhSpinner_yh_arrow_tint, textColor);
+      hideArrow = ta.getBoolean(R.styleable.YhSpinner_yh_hide_arrow, false);
+      hintText = ta.getString(R.styleable.YhSpinner_yh_hint) == null ? ""
+          : ta.getString(R.styleable.YhSpinner_yh_hint);
+      popupWindowMaxHeight = ta.getDimensionPixelSize(R.styleable.YhSpinner_yh_dropdown_max_height, 0);
+      popupWindowHeight = ta.getLayoutDimension(R.styleable.YhSpinner_yh_dropdown_height,
           WindowManager.LayoutParams.WRAP_CONTENT);
-      paddingTop = ta.getDimensionPixelSize(R.styleable.YhSpinner_ms_padding_top, defaultPaddingTop);
-      paddingLeft = ta.getDimensionPixelSize(R.styleable.YhSpinner_ms_padding_left, defaultPaddingLeft);
-      paddingBottom = ta.getDimensionPixelSize(R.styleable.YhSpinner_ms_padding_bottom, defaultPaddingBottom);
-      paddingRight = ta.getDimensionPixelSize(R.styleable.YhSpinner_ms_padding_right, defaultPaddingRight);
+      paddingTop = ta.getDimensionPixelSize(R.styleable.YhSpinner_yh_padding_top, defaultPaddingTop);
+      paddingLeft = ta.getDimensionPixelSize(R.styleable.YhSpinner_yh_padding_left, defaultPaddingLeft);
+      paddingBottom = ta.getDimensionPixelSize(R.styleable.YhSpinner_yh_padding_bottom, defaultPaddingBottom);
+      paddingRight = ta.getDimensionPixelSize(R.styleable.YhSpinner_yh_padding_right, defaultPaddingRight);
       popupPaddingTop =
-          ta.getDimensionPixelSize(R.styleable.YhSpinner_ms_popup_padding_top, defaultPopupPaddingTop);
+          ta.getDimensionPixelSize(R.styleable.YhSpinner_yh_popup_padding_top, defaultPopupPaddingTop);
       popupPaddingLeft =
-          ta.getDimensionPixelSize(R.styleable.YhSpinner_ms_popup_padding_left, defaultPopupPaddingLeft);
+          ta.getDimensionPixelSize(R.styleable.YhSpinner_yh_popup_padding_left, defaultPopupPaddingLeft);
       popupPaddingBottom =
-          ta.getDimensionPixelSize(R.styleable.YhSpinner_ms_popup_padding_bottom, defaultPopupPaddingBottom);
+          ta.getDimensionPixelSize(R.styleable.YhSpinner_yh_popup_padding_bottom, defaultPopupPaddingBottom);
       popupPaddingRight =
-          ta.getDimensionPixelSize(R.styleable.YhSpinner_ms_popup_padding_right, defaultPopupPaddingRight);
+          ta.getDimensionPixelSize(R.styleable.YhSpinner_yh_popup_padding_right, defaultPopupPaddingRight);
       arrowColorDisabled = Utils.lighter(arrowColor, 0.8f);
     } finally {
       ta.recycle();

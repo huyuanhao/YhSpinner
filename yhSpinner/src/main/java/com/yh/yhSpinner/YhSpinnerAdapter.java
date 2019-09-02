@@ -15,7 +15,7 @@
  *
  */
 
-package com.huyuanhao.yhSpinner;
+package com.yh.yhSpinner;
 
 import android.content.Context;
 import java.util.List;

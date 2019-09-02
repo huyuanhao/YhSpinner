@@ -1,33 +1,109 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
-publish {
-  userOrg = 'huyuanhao'//jcenter账户的用户名
-//    repoName = 'maven' //仓库名,不指明,默认传到maven
-  groupId = 'com.yh.yhSpinner'//jcenter上的路径名,一般使用项目包名
-  artifactId = 'jinutil'//项目名称
-  publishVersion = '1.2.0'//版本号
-  desc = 'a library from jin '//描述,中文会乱码,应该使用英文
-  website = 'https://github.com/RomanticHua/TestDemo'//这里得填写此项目的github地址,否则不能同步到jcenter
-}
-
-tasks.withType(Javadoc) {//防止编码问题
-  options.addStringOption('Xdoclint:none', '-quiet')
-  options.addStringOption('encoding', 'UTF-8')
-  options.addStringOption('charSet', 'UTF-8')
-}
 
 android {
   compileSdkVersion 28
   buildToolsVersion '28.0.3'
-  resourcePrefix 'ms__'
+  resourcePrefix 'yh__'
 
   defaultConfig {
     minSdkVersion 14
     targetSdkVersion 28
   }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 }
 
 dependencies {
-  implementation 'androidx.annotation:annotation:1.0.0'
-  testImplementation 'junit:junit:4.12'
+  implementation 'androidx.annotation:annotation:1.1.0'
+}
+
+// 根节点添加
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+//项目主页
+def siteUrl = 'https://github.com/huyuanhao/YhSpinner'    // project homepage
+//项目的版本控制地址
+def gitUrl = 'https://github.com/huyuanhao/YhSpinner.git' // project git
+//发布到组织名称名字，必须填写
+group = "com.huyuanhao"
+//发布到JCenter上的项目名字，必须填写
+def libName = "yhSpinner"
+// 版本号，下次更新是只需要更改版本号即可
+version = "1.0"
+/**  上面配置后上传至jcenter后的编译路径是这样的： compile 'cn.bluemobi.dylan:sqlitelibrary:1.0'  **/
+task sourcesJar(type: Jar) {
+  from android.sourceSets.main.java.srcDirs
+  classifier = 'sources'
+}
+//生成文档
+task javadoc(type: Javadoc) {
+  source = android.sourceSets.main.java.srcDirs
+  classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+  options.encoding "UTF-8"
+  options.charSet 'UTF-8'
+  options.author true
+  options.version true
+  failOnError false
+}
+//文档打包成jar
+task javadocJar(type: Jar, dependsOn: javadoc) {
+  classifier = 'javadoc'
+  from javadoc.destinationDir
+}
+//上传到jcenter所需要的源码文件
+artifacts {
+  archives javadocJar
+  archives sourcesJar
+}
+// 根节点添加,// 配置maven库，生成POM.xml文件
+install {
+  repositories.mavenInstaller {
+    // This generates POM.xml with proper parameters
+    pom {
+      project {
+        packaging 'aar'
+        name 'YhSpinner For Android'
+        url siteUrl
+        // Set your license
+        licenses {
+          license {
+            name 'The Apache Software License, Version 2.0'
+            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+          }
+        }
+        developers {
+          developer { //填写的一些基本信息
+            id 'YhSpinner'
+            name 'yuanhao'
+            email 'huyuanhao325@outlook.com'
+          }
+        }
+        scm {
+          connection gitUrl
+          developerConnection gitUrl
+          url siteUrl
+        }
+      }
+    }
+  }
+}
+
+//配置bintray参数
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+  user = properties.getProperty("bintrayUser")
+  key = properties.getProperty("bintrayApiKey")
+  configurations = ['archives']
+  pkg {
+    repo = "maven"               //跟上面创建的Maven仓库名字保持一致
+    name = libName                //发布到JCenter上的项目名字
+    desc = 'This is a spinner'    //项目描述
+    websiteUrl = siteUrl
+    vcsUrl = gitUrl
+    licenses = ["Apache-2.0"]
+    publish = true
+  }
 }
