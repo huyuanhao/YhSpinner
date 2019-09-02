@@ -11,7 +11,7 @@ ___
 
 Usage
 -----
-
+修改了Nice Spinner，使其可以添加entries，并自由修改text的属性，而不会影响到下拉列表框的属性
 Add the spinner to your layout XML:
 
 ```xml
