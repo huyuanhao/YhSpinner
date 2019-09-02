@@ -1,4 +1,4 @@
-<h1 align="center">Material Spinner</h1>
+<h1 align="center">YhSpinner</h1>
 
 <p align="center">
   <a target="_blank" href="https://developer.android.com/reference/android/os/Build.VERSION_CODES.html#ICE_CREAM_SANDWICH"><img src="https://img.shields.io/badge/API-14%2B-blue.svg?style=flat" alt="API" /></a>
