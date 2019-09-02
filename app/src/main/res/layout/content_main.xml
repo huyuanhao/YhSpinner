@@ -24,6 +24,7 @@
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:background="#dddddd"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -34,8 +35,8 @@
       app:yh_dropdown_max_height="350dp"
       app:yh_dropdown_height="wrap_content"
       android:layout_width="match_parent"
-      android:background="@color/colorAccent"
-      app:yh_background_selector="@color/colorPrimaryDark"
+      android:background="@android:color/white"
+      app:yh_background_selector="@android:color/white"
       android:layout_height="wrap_content"/>
 
 </RelativeLayout>
