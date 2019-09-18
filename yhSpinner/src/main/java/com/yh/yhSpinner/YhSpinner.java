@@ -472,7 +472,7 @@ public class YhSpinner extends TextView {
     }
     if (adapter.getItems().size() > 0) {
       if (nothingSelected && !TextUtils.isEmpty(hintText)) {
-        setText(hintText);
+        setHint(hintText);
         setHintColor(hintColor);
       } else {
         setTextColor(textColor);
